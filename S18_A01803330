@@ -1,0 +1,75 @@
+print("\n--- 1. Monitor de Temperatura ---")
+temperaturas = []
+promedio = sum(temperaturas) / len(temperaturas)
+print("Temperatura promedio:", promedio)
+
+for i in range(len(temperaturas)):
+    if temperaturas[i] > promedio:
+        print("Día", i + 1, "está arriba de la media con", temperaturas[i])
+    elif temperaturas[i] < promedio:
+        print("Día", i + 1, "está abajo de la media con", temperaturas[i])
+    else:
+        print("Día", i + 1, "está en la media")
+
+print("\n--- 2. Calificaciones ---")
+estudiantes = []
+promedios = []
+
+prom_general = sum(promedios) / len(promedios)
+print("Promedio general de todos los alumnos:", prom_general)
+
+aprobados = 0
+reprobados = []
+for i in range(len(estudiantes)):
+    if promedios[i] >= 60:
+        aprobados += 1
+    else:
+        reprobados.append(estudiantes[i])
+
+porcentaje_aprobados = (aprobados / len(estudiantes)) * 100
+print("Porcentaje de alumnos aprobados:", porcentaje_aprobados, "%")
+print("Estudiantes reprobados:", reprobados)
+
+print("\n--- 3. Lista de Compras ---")
+compras = []
+ya_comprado = []
+
+for i in range(len(compras)):
+    if not ya_comprado[i]:
+        print("Aún no has comprado:", compras[i])
+        respuesta = input("¿Ya lo compraste? (s/n): ")
+        if respuesta.lower() == "s":
+            ya_comprado[i] = True
+
+print("Estado final de compras:", ya_comprado)
+
+print("\n--- 4. Números en una lista ---")
+numeros = []
+print("Valor máximo:", max(numeros))
+print("Valor mínimo:", min(numeros))
+print("Lista ordenada:", sorted(numeros))
+
+print("\n--- 5. Números pares e impares ---")
+numeros = []
+pares = []
+impares = []
+
+for n in numeros:
+    if n % 2 == 0:
+        pares.append(n)
+    else:
+        impares.append(n)
+
+print("Lista de pares:", pares)
+print("Lista de impares:", impares)
+
+print("\n--- 6. Nombres de Usuario ---")
+usuarios = []
+
+nuevo = input("Escribe un nombre de usuario: ")
+while nuevo in usuarios:
+    print("Ese usuario ya existe. Intenta con otro.")
+    nuevo = input("Escribe un nombre de usuario: ")
+
+usuarios.append(nuevo)
+print("Lista final de usuarios:", usuarios)
